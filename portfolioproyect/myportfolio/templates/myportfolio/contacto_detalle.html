@@ -1,0 +1,39 @@
+
+{% extends 'base_generic.html' %}
+
+
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto Detalle</title>
+    <link rel="stylesheet" href="{% static 'css/pagina.css' %}"> 
+</head>
+<body style="background-image: url('{% static 'images/confirmacion.jpeg' %}');
+             background-size: cover;
+             background-position: center;
+             background-repeat: no-repeat;
+             background-attachment: fixed;
+             font-family: Arial, sans-serif;
+             color: #251f1f;">
+    <div class="container mt-5">
+        <h2>Detalle del Contacto</h2>
+        <p><strong>Nombre:</strong> {{ contacto.nombre }}</p>
+        <p><strong>Email:</strong> {{ contacto.email }}</p>
+        <p><strong>Mensaje:</strong> {{ contacto.mensaje }}</p>
+        <a href="{% url 'contacto_editar' contacto.pk %}" class="btn btn-primary">Editar</a>
+        <form method="POST" action="{% url 'contacto_eliminar' contacto.pk %}" style="display:inline;" >
+
+            {% csrf_token %}
+            <button type=submit class="btn btn-danger">Eliminar</button>
+        </form>
+        <a href="{% url 'contacto_lista' %}" class="btn btn-secondary">Volver a la lista</a>
+    </div>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
+{% endblock %}
+

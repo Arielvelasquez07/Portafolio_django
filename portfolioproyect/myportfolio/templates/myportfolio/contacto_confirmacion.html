@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmación de Contacto</title>
+    <link rel="stylesheet" href="{% static 'css/pagina.css' %}"> 
+</head>
+<body style="background-image: url('{% static 'images/confirmacion.jpeg' %}');
+             background-size: cover;
+             background-position: center;
+             background-repeat: no-repeat;
+             background-attachment: fixed;
+             font-family: Arial, sans-serif;
+             color: #251f1f;">
+<!-- MENU ENCABEZADO -->
+<div class="contenedor-header">
+    <header>
+        <div class="logo">
+            <h2>Ariel<span> Velasquez</span></h2>
+        </div>
+        <ul>
+            <li>
+                <a href="{% url 'index' %}" class="btn btn-primary">INICIO</a>
+            </li>
+        </ul>
+        <div class="nav-responsive" onclick="mostrarOcultarMenu()">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </header>
+</div>
+
+
+    <div class="container">
+        <h1>Gracias por tu mensaje</h1>
+        <p>Hemos recibido tu mensaje y nos pondremos en contacto contigo pronto.</p>
+        <a href="{% url 'index' %}">Volver al inicio</a>
+    </div>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
+
+
+
+

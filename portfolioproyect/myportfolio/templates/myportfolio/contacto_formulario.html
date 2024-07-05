@@ -1,0 +1,33 @@
+{% extends "base_generic.html" %}
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> contacto formulario</title>
+    <link rel="stylesheet" href="{% static 'css/pagina.css' %}"> 
+</head>
+<body style="background-image: url('{% static 'images/confirmacion.jpeg' %}');
+             background-size: cover;
+             background-position: center;
+             background-repeat: no-repeat;
+             background-attachment: fixed;
+             font-family: Arial, sans-serif;
+             color: #251f1f;">
+    {% block content %}
+    <div class="container mt-5">
+        <h2>Contacta con nosotros</h2>
+        <form method="POST" CLASS="needs-validation" novalidate>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </div>
+{% endblock %}
+
+{% load static %}
+
+</body>
+</html>

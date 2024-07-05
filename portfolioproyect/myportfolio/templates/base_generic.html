@@ -1,0 +1,45 @@
+{% load bootstrap5 %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Mi Portafolio {% endblock %}</title>
+    {% bootstrap_css %}
+    <link rel="stylesheet" href="{% static 'css/pagina.css' %}"> 
+    {% block entra_head %}
+    {% endblock %}
+</head>
+<body style="background-image: url('{% static 'images/confirmacion.jpeg' %}');
+             background-size: cover;
+             background-position: center;
+             background-repeat: no-repeat;
+             background-attachment: fixed;
+             font-family: Arial, sans-serif;
+             color: #251f1f;">
+<!-- MENU ENCABEZADO -->
+<div class="contenedor-header">
+    <header>s
+        <div class="logo">
+            <h2>Ariel<span> Velasquez</span></h2>
+        </div>
+        <ul>
+            <li>
+                <a href="{% url 'index' %}" class="btn btn-primary">INICIO</a>
+            </li>
+        </ul>
+        <div class="nav-responsive" onclick="mostrarOcultarMenu()">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </header>
+</div>
+
+    {% block content %}
+    {% endblock %}
+    {% bootstrap_javascript %}
+    <script src="./js/script.js"></script>
+</body>
+</html>
+
